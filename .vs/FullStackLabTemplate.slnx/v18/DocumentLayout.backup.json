@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF5B414-8D12-4659-955D-AF4CF04EED04}|UserInterface\\UserInterface.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\userinterface\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BF5B414-8D12-4659-955D-AF4CF04EED04}|UserInterface\\UserInterface.csproj|solutionrelative:userinterface\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF5B414-8D12-4659-955D-AF4CF04EED04}|UserInterface\\UserInterface.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\userinterface\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BF5B414-8D12-4659-955D-AF4CF04EED04}|UserInterface\\UserInterface.csproj|solutionrelative:userinterface\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C912A4C9-4DC0-55B5-1B9D-FD132972197A}|BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\businesslogiclayer\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C912A4C9-4DC0-55B5-1B9D-FD132972197A}|BusinessLogicLayer\\BusinessLogicLayer.csproj|solutionrelative:businesslogiclayer\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C912A4C9-4DC0-55B5-1B9D-FD132972197A}|BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\businesslogiclayer\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C912A4C9-4DC0-55B5-1B9D-FD132972197A}|BusinessLogicLayer\\BusinessLogicLayer.csproj|solutionrelative:businesslogiclayer\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF5B414-8D12-4659-955D-AF4CF04EED04}|UserInterface\\UserInterface.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\userinterface\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BF5B414-8D12-4659-955D-AF4CF04EED04}|UserInterface\\UserInterface.csproj|solutionrelative:userinterface\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FCCEB3-DD88-F8C0-89A3-FD31A7C54F23}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\dataaccesslayer\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FCCEB3-DD88-F8C0-89A3-FD31A7C54F23}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FCCEB3-DD88-F8C0-89A3-FD31A7C54F23}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\dataaccesslayer\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FCCEB3-DD88-F8C0-89A3-FD31A7C54F23}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262C6A48-AE34-D77E-44A9-AF0CD30983F0}|Models\\Models.csproj|c:\\users\\noorm\\documents\\bsit-f-23-b-937\\semesters\\semester 07\\full stack web development lab\\lab activities\\lab 04\\fullstacklabtemplate\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262C6A48-AE34-D77E-44A9-AF0CD30983F0}|Models\\Models.csproj|solutionrelative:models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\UserInterface\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "UserInterface\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\UserInterface\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "UserInterface\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-11T10:58:19.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\UserInterface\\Program.cs",
+              "RelativeDocumentMoniker": "UserInterface\\Program.cs",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\UserInterface\\Program.cs",
+              "RelativeToolTip": "UserInterface\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T10:44:53.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\UserInterface\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "UserInterface\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\UserInterface\\Components\\_Imports.razor",
+              "RelativeToolTip": "UserInterface\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-11T10:39:34.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\BusinessLogicLayer\\ProductService.cs",
+              "RelativeDocumentMoniker": "BusinessLogicLayer\\ProductService.cs",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\BusinessLogicLayer\\ProductService.cs",
+              "RelativeToolTip": "BusinessLogicLayer\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T10:09:53.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\BusinessLogicLayer\\IProductService.cs",
+              "RelativeDocumentMoniker": "BusinessLogicLayer\\IProductService.cs",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\BusinessLogicLayer\\IProductService.cs",
+              "RelativeToolTip": "BusinessLogicLayer\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T10:08:22.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\ProductRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T07:33:50.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\IProductRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T07:29:53.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductModel.cs",
+              "DocumentMoniker": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\ProductModel.cs",
+              "RelativeDocumentMoniker": "Models\\ProductModel.cs",
+              "ToolTip": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\ProductModel.cs",
+              "RelativeToolTip": "Models\\ProductModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T07:28:14.354Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
