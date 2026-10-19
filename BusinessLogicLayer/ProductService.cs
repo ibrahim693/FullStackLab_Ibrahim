@@ -1,42 +1,35 @@
-﻿using Models;
+﻿
+using Models;
 using DataAccessLayer;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BusinessLogicLayer
 {
     public class ProductService : IProductService
     {
-        private readonly ProductRepository _productRepository;
-
-        public ProductService(ProductRepository productRepository)
+        public List<ProductModel> GetAllData()
         {
-            _productRepository = productRepository;
-        }
-        public void Create(ProductModel product)
-        {
-            _productRepository.Add(product);
+            return CRUD.GetAllData();
         }
 
-        public void Delete(Guid id)
+        public ProductModel? GetDataById(int id)
         {
-            _productRepository.Delete(id);
+            return CRUD.GetDataById(id);
         }
 
-        public List<ProductModel> GetAll()
+        public bool InsertData(ProductModel model)
         {
-           return _productRepository.GetAll();
+            return CRUD.InsertData(model);
         }
 
-        public ProductModel? GetById(Guid id)
+        public bool UpdateData(ProductModel model)
         {
-           return _productRepository.GetById(id);
+            return CRUD.UpdateData(model);
         }
 
-        public void Update(ProductModel product)
+        public bool DeleteData(int id)
         {
-            _productRepository.Update(product);
+            return CRUD.DeleteData(id);
         }
     }
 }

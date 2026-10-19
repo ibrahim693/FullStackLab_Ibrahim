@@ -1,6 +1,6 @@
 using UserInterface.Components;
 using BusinessLogicLayer;
-using DataAccessLayer;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddSingleton<ProductRepository, ProductRepository>();
+
 builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();

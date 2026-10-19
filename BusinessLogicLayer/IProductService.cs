@@ -1,16 +1,19 @@
-﻿using Models;
-using System;
+﻿
+using Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BusinessLogicLayer
 {
     public interface IProductService
     {
-        List<ProductModel> GetAll();
-        ProductModel? GetById(Guid id);
-        void Create(ProductModel product);
-        void Update(ProductModel product);
-        void Delete(Guid id);
+        List<ProductModel> GetAllData();
+
+        ProductModel? GetDataById(int id);
+
+        bool InsertData(ProductModel model);
+
+        bool UpdateData(ProductModel model);
+
+        bool DeleteData(int id);
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj": {}
+    "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj": {
+    "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\noorm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\obj\\",
+        "projectPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\230946\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\noorm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\230946\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

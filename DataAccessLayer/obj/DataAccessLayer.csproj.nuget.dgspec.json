@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj": {}
+    "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\noorm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\230946\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\noorm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\230946\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -34,8 +34,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj"
+              "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj"
               }
             }
           }
@@ -56,6 +56,12 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -350,20 +356,20 @@
         }
       }
     },
-    "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj": {
+    "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\noorm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\Models\\obj\\",
+        "projectPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\230946\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\noorm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\230946\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

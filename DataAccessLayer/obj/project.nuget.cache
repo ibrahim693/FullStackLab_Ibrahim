@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UFew9lFLr/4=",
+  "dgSpecHash": "8Mgc2aE5SiQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\noorm\\Documents\\BSIT-F-23-B-937\\Semesters\\Semester 07\\Full Stack Web Development Lab\\Lab Activities\\Lab 04\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\230946\\Downloads\\FullStackLabTemplate_ibrahim\\FullStackLabTemplate\\DataAccessLayer\\DataAccessLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\230946\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\230946\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.0\\microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\230946\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
