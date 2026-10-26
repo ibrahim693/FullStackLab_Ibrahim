@@ -480,3 +480,29 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# ==========================================
+# FullStackLab - Lab 06 Additional Rules
+# ==========================================
+
+# Build output for all projects
+**/bin/
+**/obj/
+
+# Database credentials and local secrets
+**/secrets.json
+.env
+.env.*
+!.env.example
+
+# Local development configuration
+appsettings.Development.local.json
+
+# Temporary backup files
+*.bak
+*.backup
+*.tmp
+
+# Local database backups
+*.sql.bak
+*.dump

@@ -1,157 +1,85 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
+using Models;
 using System;
 using System.Collections.Generic;
-using Models;
-using Npgsql;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
     public class CRUD
     {
-        // READ ALL PRODUCTS
-        public static List<ProductModel> GetAllData()
+        private readonly IDbContextFactory<AppDbContext> _factory;
+
+        public CRUD(IDbContextFactory<AppDbContext> factory)
         {
-            const string Query = @"
-                SELECT ""PId"", ""ProductName"", ""Price""
-                FROM ""Products""
-                ORDER BY ""PId""";
-
-            List<ProductModel> products = new List<ProductModel>();
-
-            using (NpgsqlConnection connection = DBHelper.GetConnection())
-            {
-                connection.Open();
-
-                using (NpgsqlCommand command = new NpgsqlCommand(Query, connection))
-                using (NpgsqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        ProductModel model = new ProductModel
-                        {
-                            PId = Convert.ToInt32(reader["PId"]),
-                            ProductName = reader["ProductName"].ToString() ?? "",
-                            Price = Convert.ToInt32(reader["Price"])
-                        };
-
-                        products.Add(model);
-                    }
-                }
-            }
-
-            return products;
+            _factory = factory;
         }
 
-        // READ PRODUCT BY ID
-        public static ProductModel? GetDataById(int id)
+        public async Task<List<ProductModel>> GetAllDataAsync()
         {
-            const string Query = @"
-                SELECT ""PId"", ""ProductName"", ""Price""
-                FROM ""Products""
-                WHERE ""PId"" = @PId";
+            await using var db =
+                await _factory.CreateDbContextAsync();
 
-            using (NpgsqlConnection connection = DBHelper.GetConnection())
-            {
-                connection.Open();
-
-                using (NpgsqlCommand command = new NpgsqlCommand(Query, connection))
-                {
-                    command.Parameters.AddWithValue("@PId", id);
-
-                    using (NpgsqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new ProductModel
-                            {
-                                PId = Convert.ToInt32(reader["PId"]),
-                                ProductName = reader["ProductName"].ToString() ?? "",
-                                Price = Convert.ToInt32(reader["Price"])
-                            };
-                        }
-                    }
-                }
-            }
-
-            return null;
+            return await db.Products
+                .AsNoTracking()
+                .OrderBy(p => p.Name)
+                .ToListAsync();
         }
 
-        // INSERT PRODUCT
-        public static bool InsertData(ProductModel model)
+        public async Task<ProductModel?> GetDataByIdAsync(Guid id)
         {
-            const string Query = @"
-                INSERT INTO ""Products"" (""ProductName"", ""Price"")
-                VALUES (@ProductName, @Price)";
+            await using var db =
+                await _factory.CreateDbContextAsync();
 
-            using (NpgsqlConnection connection = DBHelper.GetConnection())
-            {
-                connection.Open();
-
-                using (NpgsqlCommand command = new NpgsqlCommand(Query, connection))
-                {
-                    command.Parameters.AddWithValue(
-                        "@ProductName",
-                        (object?)model.ProductName ?? DBNull.Value);
-
-                    command.Parameters.AddWithValue("@Price", model.Price);
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    return rowsAffected > 0;
-                }
-            }
+            return await db.Products
+                .AsNoTracking()
+                .FirstOrDefaultAsync(p => p.ProductId == id);
         }
 
-        // UPDATE PRODUCT
-        public static bool UpdateData(ProductModel model)
+        public async Task<bool> InsertDataAsync(ProductModel model)
         {
-            const string Query = @"
-                UPDATE ""Products""
-                SET ""ProductName"" = @ProductName,
-                    ""Price"" = @Price
-                WHERE ""PId"" = @PId";
+            await using var db =
+                await _factory.CreateDbContextAsync();
 
-            using (NpgsqlConnection connection = DBHelper.GetConnection())
-            {
-                connection.Open();
+            db.Products.Add(model);
 
-                using (NpgsqlCommand command = new NpgsqlCommand(Query, connection))
-                {
-                    command.Parameters.AddWithValue("@PId", model.PId);
-
-                    command.Parameters.AddWithValue(
-                        "@ProductName",
-                        (object?)model.ProductName ?? DBNull.Value);
-
-                    command.Parameters.AddWithValue("@Price", model.Price);
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    return rowsAffected > 0;
-                }
-            }
+            return await db.SaveChangesAsync() > 0;
         }
 
-        // DELETE PRODUCT
-        public static bool DeleteData(int id)
+        public async Task<bool> UpdateDataAsync(ProductModel model)
         {
-            const string Query = @"
-                DELETE FROM ""Products""
-                WHERE ""PId"" = @PId";
+            await using var db =
+                await _factory.CreateDbContextAsync();
 
-            using (NpgsqlConnection connection = DBHelper.GetConnection())
-            {
-                connection.Open();
+            var existing = await db.Products
+                .FindAsync(model.ProductId);
 
-                using (NpgsqlCommand command = new NpgsqlCommand(Query, connection))
-                {
-                    command.Parameters.AddWithValue("@PId", id);
+            if (existing == null)
+                return false;
 
-                    int rowsAffected = command.ExecuteNonQuery();
+            existing.Name = model.Name;
+            existing.Description = model.Description;
+            existing.Price = model.Price;
+            existing.StockQuantity = model.StockQuantity;
 
-                    return rowsAffected > 0;
-                }
-            }
+            return await db.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> DeleteDataAsync(Guid id)
+        {
+            await using var db =
+                await _factory.CreateDbContextAsync();
+
+            var existing = await db.Products.FindAsync(id);
+
+            if (existing == null)
+                return false;
+
+            db.Products.Remove(existing);
+
+            return await db.SaveChangesAsync() > 0;
         }
     }
 }

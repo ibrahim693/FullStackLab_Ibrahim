@@ -1,19 +1,21 @@
 ﻿
 using Models;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
     public interface IProductService
     {
-        List<ProductModel> GetAllData();
+        Task<List<ProductModel>> GetAllDataAsync();
 
-        ProductModel? GetDataById(int id);
+        Task<ProductModel?> GetDataByIdAsync(Guid id);
 
-        bool InsertData(ProductModel model);
+        Task<bool> InsertDataAsync(ProductModel model);
 
-        bool UpdateData(ProductModel model);
+        Task<bool> UpdateDataAsync(ProductModel model);
 
-        bool DeleteData(int id);
+        Task<bool> DeleteDataAsync(Guid id);
     }
 }

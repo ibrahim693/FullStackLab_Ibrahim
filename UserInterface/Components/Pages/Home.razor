@@ -1,10 +1,12 @@
 ﻿@page "/"
+@page "/products"
 @rendermode InteractiveServer
 @using System
 @using System.Collections.Generic
 @using System.Threading.Tasks
 @using Models
 @using BusinessLogicLayer
+@using Microsoft.AspNetCore.Components.Forms
 @inject IProductService ProductService
 
 <PageTitle>Product Management</PageTitle>
@@ -55,20 +57,35 @@
                     <h2>@(isEditing ? "Edit Product" : "Add New Product")</h2>
                     <p>
                         @(isEditing
-                            ? $"Editing product #{productModel.PId}"
+                            ? "Update the selected product details."
                             : "Enter the details below to create a product.")
                     </p>
                 </div>
                 <span class="panel-symbol">✎</span>
             </div>
 
-            <EditForm Model="@productModel" OnSubmit="@SaveProduct">
+            <EditForm @key="productModel"
+                      Model="@productModel"
+                      OnValidSubmit="@SaveProduct">
+                <DataAnnotationsValidator />
+                <ValidationSummary class="validation-summary" />
+
                 <div class="form-group">
                     <label for="productName">Product name</label>
                     <InputText id="productName"
                                class="form-control"
-                               @bind-Value="productModel.ProductName"
+                               @bind-Value="productModel.Name"
                                placeholder="e.g. Football" />
+                    <ValidationMessage For="@(() => productModel.Name)" />
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <InputTextArea id="productDescription"
+                                   class="form-control description-input"
+                                   @bind-Value="productModel.Description"
+                                   placeholder="Optional product description" />
+                    <ValidationMessage For="@(() => productModel.Description)" />
                 </div>
 
                 <div class="form-group">
@@ -76,8 +93,21 @@
                     <InputNumber id="productPrice"
                                  class="form-control"
                                  @bind-Value="productModel.Price"
+                                 step="0.01"
                                  min="0"
                                  placeholder="Enter price" />
+                    <ValidationMessage For="@(() => productModel.Price)" />
+                </div>
+
+                <div class="form-group">
+                    <label for="productStock">Stock quantity</label>
+                    <InputNumber id="productStock"
+                                 class="form-control"
+                                 @bind-Value="productModel.StockQuantity"
+                                 min="0"
+                                 step="1"
+                                 placeholder="Enter stock quantity" />
+                    <ValidationMessage For="@(() => productModel.StockQuantity)" />
                 </div>
 
                 <button type="submit"
@@ -114,10 +144,25 @@
                 <span class="count-badge">@products.Count items</span>
             </div>
 
+            <button type="button"
+                    class="btn-refresh"
+                    @onclick="RefreshProducts"
+                    disabled="@(isLoading || isSaving)">
+                Refresh products
+            </button>
+
             @if (isLoading)
             {
                 <div class="empty-state">
                     <p>Loading products...</p>
+                </div>
+            }
+            else if (loadFailed)
+            {
+                <div class="empty-state">
+                    <div class="empty-icon">!</div>
+                    <h3>Unable to load products</h3>
+                    <p>Check the connection and server logs.</p>
                 </div>
             }
             else if (products.Count == 0)
@@ -135,32 +180,51 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
+                                <th>Description</th>
                                 <th>Price</th>
+                                <th>Stock</th>
                                 <th class="actions-heading">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in products)
                             {
-                                <tr @key="item.PId">
+                                <tr @key="item.ProductId">
                                     <td>
                                         <div class="product-cell">
                                             <div class="product-avatar">
-                                                @GetInitial(item.ProductName)
+                                                @GetInitial(item.Name)
                                             </div>
                                             <div>
                                                 <div class="product-name">
-                                                    @item.ProductName
+                                                    @item.Name
+                                                </div>
+                                                <div class="product-id"
+                                                     title="@item.ProductId.ToString()">
+                                                    ID: @item.ProductId.ToString("D")[..8]...
                                                 </div>
                                                 <div class="product-id">
-                                                    ID: @item.PId
+                                                    Created:
+                                                    @item.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
+                                        <span class="description-cell">
+                                            @(string.IsNullOrWhiteSpace(item.Description)
+                                                ? "—"
+                                                : item.Description)
+                                        </span>
+                                    </td>
+                                    <td>
                                         <span class="price">
-                                            @item.Price.ToString("N0")
+                                            @item.Price.ToString("N2")
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="stock-badge">
+                                            @item.StockQuantity
                                         </span>
                                     </td>
                                     <td>
@@ -173,7 +237,7 @@
                                             </button>
                                             <button type="button"
                                                     class="btn-delete"
-                                                    @onclick="() => DeleteProduct(item.PId)"
+                                                    @onclick="() => DeleteProduct(item.ProductId)"
                                                     disabled="@isSaving">
                                                 Delete
                                             </button>
@@ -359,6 +423,24 @@
             box-shadow: 0 0 0 3px #4f46e51c;
         }
 
+    .description-input {
+        min-height: 90px;
+        resize: vertical;
+    }
+
+    .validation-summary {
+        color: #b91c1c;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .validation-message {
+        display: block;
+        color: #b91c1c;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
     .btn-primary, .btn-secondary {
         display: block;
         width: 100%;
@@ -387,6 +469,22 @@
         color: var(--text);
         background: #eef1f6;
     }
+
+    .btn-refresh {
+        margin-bottom: 15px;
+        border: 1px solid #c7d2fe;
+        background: #eef2ff;
+        color: var(--primary);
+        border-radius: 8px;
+        padding: 9px 13px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+        .btn-refresh:hover:not(:disabled) {
+            background: #e0e7ff;
+        }
 
     button:disabled {
         opacity: .6;
@@ -429,6 +527,7 @@
             padding: 16px 12px;
             border-bottom: 1px solid var(--border);
             font-size: 13px;
+            vertical-align: middle;
         }
 
         .product-table tbody tr:last-child td {
@@ -470,9 +569,26 @@
         font-size: 11px;
     }
 
+    .description-cell {
+        color: var(--muted);
+        overflow-wrap: anywhere;
+        max-width: 220px;
+        display: inline-block;
+    }
+
     .price {
         font-weight: 750;
         white-space: nowrap;
+    }
+
+    .stock-badge {
+        display: inline-block;
+        border-radius: 8px;
+        background: #eef2ff;
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 750;
+        padding: 7px 10px;
     }
 
     .actions-heading {
@@ -616,21 +732,29 @@
     private bool isLoading = true;
     private bool isSaving;
     private bool isError;
+    private bool loadFailed;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        LoadProducts();
+        await LoadProductsAsync();
     }
 
-    private void LoadProducts()
+    private async Task LoadProductsAsync()
     {
+        isLoading = true;
+        loadFailed = false;
+
         try
         {
-            products = ProductService.GetAllData();
+            products = await ProductService.GetAllDataAsync();
         }
         catch (Exception ex)
         {
             Console.Error.WriteLine($"Error loading products: {ex}");
+
+            products = new List<ProductModel>();
+            loadFailed = true;
+
             message = "Could not load products. Check your database connection.";
             isError = true;
         }
@@ -640,40 +764,29 @@
         }
     }
 
-    private async Task SaveProduct(EditContext editContext)
+    private async Task RefreshProducts()
+    {
+        ClearMessage();
+        await LoadProductsAsync();
+    }
+
+    private async Task SaveProduct()
     {
         if (isSaving)
             return;
 
         ClearMessage();
 
-        string name = productModel.ProductName?.Trim() ?? "";
-
-        if (string.IsNullOrWhiteSpace(name))
-        {
-            message = "Please enter a product name.";
-            isError = true;
-            return;
-        }
-
-        if (productModel.Price < 0)
-        {
-            message = "Price cannot be negative.";
-            isError = true;
-            return;
-        }
-
         isSaving = true;
 
         try
         {
-            productModel.ProductName = name;
-
             bool success;
 
             if (isEditing)
             {
-                success = ProductService.UpdateData(productModel);
+                success = await ProductService
+                    .UpdateDataAsync(productModel);
 
                 message = success
                     ? "Product updated successfully."
@@ -681,7 +794,8 @@
             }
             else
             {
-                success = ProductService.InsertData(productModel);
+                success = await ProductService
+                    .InsertDataAsync(productModel);
 
                 message = success
                     ? "Product added successfully."
@@ -694,13 +808,15 @@
             {
                 productModel = new ProductModel();
                 isEditing = false;
-                LoadProducts();
+
+                await LoadProductsAsync();
             }
         }
         catch (Exception ex)
         {
             Console.Error.WriteLine($"Error saving product: {ex}");
-            message = "Could not save the product. Check the database connection.";
+
+            message = "Could not save the product. Check the server logs.";
             isError = true;
         }
         finally
@@ -713,16 +829,19 @@
     {
         productModel = new ProductModel
         {
-            PId = item.PId,
-            ProductName = item.ProductName,
-            Price = item.Price
+            ProductId = item.ProductId,
+            Name = item.Name,
+            Description = item.Description,
+            Price = item.Price,
+            StockQuantity = item.StockQuantity,
+            CreatedAt = item.CreatedAt
         };
 
         isEditing = true;
         ClearMessage();
     }
 
-    private async Task DeleteProduct(int id)
+    private async Task DeleteProduct(Guid id)
     {
         if (isSaving)
             return;
@@ -732,19 +851,19 @@
 
         try
         {
-            bool success = ProductService.DeleteData(id);
+            bool success = await ProductService.DeleteDataAsync(id);
 
             if (success)
             {
                 message = "Product deleted successfully.";
 
-                if (isEditing && productModel.PId == id)
+                if (isEditing && productModel.ProductId == id)
                 {
                     productModel = new ProductModel();
                     isEditing = false;
                 }
 
-                LoadProducts();
+                await LoadProductsAsync();
             }
             else
             {
@@ -755,15 +874,14 @@
         catch (Exception ex)
         {
             Console.Error.WriteLine($"Error deleting product: {ex}");
-            message = "Could not delete the product. Check the database connection.";
+
+            message = "Could not delete the product. Check the server logs.";
             isError = true;
         }
         finally
         {
             isSaving = false;
         }
-
-        await InvokeAsync(StateHasChanged);
     }
 
     private void CancelEdit()
